@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nba-game-prediction"
+version = "0.1.0"
+description = "Leakage-aware NBA regular-season game probability modeling"
+requires-python = ">=3.10"
+dependencies = [
+  "joblib>=1.3,<2",
+  "matplotlib>=3.8,<4",
+  "numpy>=1.26,<3",
+  "pandas>=2.1,<3",
+  "scikit-learn>=1.4,<2",
+]
+
+[project.optional-dependencies]
+dev = ["jupyter>=1.0,<2", "nbclient>=0.10,<1", "nbformat>=5.10,<6", "pytest>=8,<9"]
+
+[tool.setuptools.packages.find]
+include = ["nba_prediction*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
